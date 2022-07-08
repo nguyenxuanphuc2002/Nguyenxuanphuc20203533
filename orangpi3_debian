@@ -117,15 +117,14 @@ sh pi_card_reader/Tools_And_Docs/Logo_School_Tool/update_logo_school.sh
 """""""""""""""""
 4) Make system auto-boot and auto-config 
 """""""""""""""""
-4.1) Click "application",click "Settings" and click "Session and Startup ", open"Application Autostart" then click "Add", then set:
+4.1) Click "Application",click "Settings" and click "Session and Startup ", open"Application Autostart" then click "Add", then set:
 - Name: terminal
-- Command: click "browser", then find following path: "/user/bin/x-terminal-emulator.rel"
+- Command: click "browser", then find following path: "/user/bin/x-terminal-emulator.real"
 
-now right-click Terminal and open Preferences: 
-- change the name of current profile to "Debug"
-- add new Profiles named "Meta_edu" and click down arrow, then choose "Set as default"
-- now navigate to "Command" tab in profile "Meta_edu", choose both "Run command as a login shell" and "Run custom command instead of my shell"
-- add line "sh ./pi_card_reader/Bash_Script/auto_boot.sh" to Custom command
+now right-click Terminal-Emulator and open Preferences:
+- Open "Profiles", open "Command"
+- Choose both "Run command as a login shell" and "Run custom command instead of my shell"
+- Add line "sh ./pi_card_reader/Bash_Script/auto_boot.sh" to Custom command
 - if possible, in "Text" tab, set "Initial terminal size" to 100 columns and 100 rows
 
 4.2) Install "Autohide Downloads Bar" extension for chromium here (https://chrome.google.com/webstore/detail/autohide-downloads-bar/iaefpjibipfaofmigecedfapfgplmplo)
