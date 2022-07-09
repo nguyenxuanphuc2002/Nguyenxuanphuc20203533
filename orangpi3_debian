@@ -3,21 +3,18 @@
 """""""""""""""""
 1.1) Download and install Debian Imager to your laptop here: https://drive.google.com/drive/folders/1ctuKgHNN9r517tiAv9GGGaR7UYQgZiXP
 - Download balenaEtcher to your latop here : https://www.balena.io/etcher/
-- Insert SD card (32 GB, 64 GB) into your laptop
+- Insert SD card (32 GB, 64 GB, 128GB ) into your laptop
 - Open balenaEtcher, click flash from flie
-- Choose Debian Pi Imager which download above
+- Choose Debian Pi Imager which downloaded 
 - Select SD card
 - Flash 
 2) Initialize operating system and source code
 """""""""""""""""
-2.1) Install setting for Debian system, set user name to "metaedu", password to 1
-- Choose Location: Ho Chi Minh
-- Language/ keyboard: English US
-- Your name, user, desktop name: metaedu
-- Choose "auto login" => Must auto login
-
-2.2) Download code: Open "Terminal" and run those commands (don't type, copy paste):
-
+2.1) Install setting for Debian system :
+- Run command "timedatectl list-timezones" to list all available time zones
+- Identify which time zone is accurate to your location, run the command "sudo timedatectl set-timezone your_time_zone" 
+- For example, to change the system’s timezone to Asia/Ho_Chi_Minh , you would run: "sudo timedatectl set-timezone Asia/Ho_Chi_Minh"
+2.2) Download code: Open "Terminal Emulator" and run those commands (don't type, copy paste):
 cd ~
 sudo apt update
 sudo apt install git
@@ -59,21 +56,6 @@ sudo minicom -s
 - Restart your Pi
 """"""""""""""""""
 """"""""""""""""""
-
-lsusb//not essential
-
-### use lsusb to check vendor and product id
-sudo modprobe usbserial vendor=1a86 product=7532
-
-### If above line "sudo modprobe usbserial vendor=1a86 product=7532" doesn't work
-### For some reason, some reader need to add 0x in font of id, eg:
-sudo modprobe usbserial vendor=0x31aa product=0x3000
-
-### Then use following line to check if ports are open:
-sudo python3 -m serial.tools.list_ports
-### If everything works well, the terminal output should show "/dev/ttyUSB0" as a port
-### If not run "sudo apt remove brltty" again
-
 ### (DO NOT RUN 4 FOLLOWING COMMAND)
 ### sudo dmesg | grep -i USB
 ### sudo lsusb -t
@@ -117,7 +99,7 @@ sh pi_card_reader/Tools_And_Docs/Logo_School_Tool/update_logo_school.sh
 """""""""""""""""
 4) Make system auto-boot and auto-config 
 """""""""""""""""
-4.1) Click "Application",click "Settings" and click "Session and Startup ", open"Application Autostart" then click "Add", then set:
+4.1) Click "Application",click "Settings" and click "Session and Startup ", open "Application Autostart" then click "Add", then set:
 - Name: terminal
 - Command: click "browser", then find following path: "/user/bin/x-terminal-emulator.real"
 
@@ -125,8 +107,6 @@ now right-click Terminal-Emulator and open Preferences:
 - Open "Profiles", open "Command"
 - Choose both "Run command as a login shell" and "Run custom command instead of my shell"
 - Add line "sh ./pi_card_reader/Bash_Script/auto_boot.sh" to Custom command
-- if possible, in "Text" tab, set "Initial terminal size" to 100 columns and 100 rows
-
 4.2) Install "Autohide Downloads Bar" extension for chromium here (https://chrome.google.com/webstore/detail/autohide-downloads-bar/iaefpjibipfaofmigecedfapfgplmplo)
 and set "Delay Timer" of this extension to 0.
 
