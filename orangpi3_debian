@@ -21,11 +21,6 @@ sudo apt install git
 git clone https://github.com/SontranBK/pi_card_reader 
 """""""""""""""""
 3) Open "Terminal Emulator" and run those command to install dependencies:
-if there's issue with "Could not get lock /var/cache/apt/archives/lock, or process is hold, ...", 
-here is the solution: https://itsfoss.com/fix-ubuntu-install-error/
-
-cd into /var/lib/dpkg/ and remove lock-fontend by: rm lock-fontend
-"""""""""""""""""
 // You can copy paste those commands instead of typing
 
 cd ~
@@ -86,7 +81,6 @@ cd flutter/
 pwd  # /home/orangepi/flutter
 export PATH="/home/orangepi/flutter/bin":$PATH
 """""""""""""""""""
-
 cd ~
 flutter --version
 cd ~
