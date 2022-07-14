@@ -1,7 +1,7 @@
 """""""""""""""""
-1) Install Operating System (Hệ điều hành) for Orange pi 3 
+1) Install Operating System for Orange pi 3 
 """""""""""""""""
-1.1) Download and install Debian Bullseys Imager to your laptop here: https://drive.google.com/drive/folders/1ctuKgHNN9r517tiAv9GGGaR7UYQgZiXP
+1.1) Download and install Debian Bullseye Imager to your laptop here: https://drive.google.com/drive/folders/1ctuKgHNN9r517tiAv9GGGaR7UYQgZiXP
 - Download balenaEtcher to your latop here : https://www.balena.io/etcher/
 - Insert SD card (32 GB, 64 GB, 128GB ) into your laptop
 - Open balenaEtcher, click flash from flie
@@ -11,9 +11,10 @@
 2) Initialize operating system and source code
 """""""""""""""""
 2.1) Install setting for Debian system :
+- Run the commnad "passwd" to change password, Enter password default(orangepi) in line "Current password", then set New password to "12345678"
 - Run command "timedatectl list-timezones" to list all available time zones
 - Identify which time zone is accurate to your location, run the command "sudo timedatectl set-timezone your_time_zone" 
-- For example, to change the system’s timezone to Asia/Ho_Chi_Minh , you would run: "sudo timedatectl set-timezone Asia/Ho_Chi_Minh"
+- For example, to change the system’s timezone to Asia/Ho_Chi_Minh , you would run : "sudo timedatectl set-timezone Asia/Ho_Chi_Minh"
 2.2) Download code: Open "Terminal Emulator" and run those commands (don't type, copy paste):
 cd ~
 sudo apt update
@@ -28,8 +29,6 @@ git clone https://github.com/SontranBK/pi_card_reader
 3) Open "Terminal Emulator" and run those command to install dependencies:
 // You can copy paste those commands instead of typing
 
-cd ~
-sudo apt install chromium
 cd ~
 sudo apt install -y python3-pip
 cd ~
@@ -72,7 +71,7 @@ yaourt -S aur/acsccid
 sudo systemctl enable pcscd.service
 sudo systemctl start pcscd.service 
 sudo systemctl status pcscd.service
-//support pyscard
+
 
 ### To install flutter
 cd ~
@@ -107,28 +106,28 @@ now right-click Terminal-Emulator and open Preferences:
 - Choose both "Run command as a login shell" and "Run custom command instead of my shell"
 - Add line "sh ./pi_card_reader/Bash_Script/auto_boot.sh" to Custom command
 
-4.5) Go to Setting (of Ubuntu) => Appearance => Enable "Auto-hide the Dock"
-4.6) Go to Setting (of Ubuntu) => Power => Power Saving Options => Change to "Never" 
-(Make Ubuntu never goes to "sleep" mode)
-
-4.7) Install virtual keyboard on device (screen keyboard)
-
-- Open Setting on Ubuntu
-- Choose Accessibility
-- In Typing section -> Turn "Screen Keyboard" to "on" 
-
-4.8) To turn off automatically software update
-
-https://askubuntu.com/questions/1139545/how-do-i-utterly-stop-automatic-update-checks-in-ubuntu-19-04
-https://linuxnightly.com/how-to-disable-automatic-updates-in-ubuntu/
-
-- First, open up the “Software & Updates” utility.
-- Head over to the “updates” tab 
+4.2) Click "Application", click "Settings", open "Settings Manager", click "Screensaver", then open "Display Modes", change Mode to "Disable Screen Saver" 
+4.3) To turn off automatically software update
+- Click "Application", click "Settings"
+- Open up the “Software & Updates” utility.
+- Head over to the “Updates” tab 
 - Change the “Automatically check for updates” option to never
-- Change the "Notify me of a new ubuntu version" option to never
+- Remove choose "Recommended update(bullseye-update)"
+- Close
+4.4) Hide Download Bar in firefox
+- Open firefox
+- Right-click symbol "Downloads", click remove from ToolBar
+- Type about:config to the address bar, click to the "Accept the Risk and Continue"
+- Search "download"
+- Change "browser.download.improvenment_to_dowload_panel" to "true"
+- Change "browser.download.forbid_open_with" to "true"
+- Click "Menu" Button, open "Settings" , search "Downloads"
+- Choose "Save files to", Browser "Downloads"
+- In "Application", find content type "WebIP Image", "Scalable Vector Graphics(SVG)", "PNG Image" change action to "Save file"
+- Scroll down find "Deceptive Content and Dangerous Software Protection", remove choose Block dangerous and deceptive content"
 
 """""""""""""""""
-5) Change the apperance of Ubuntu, make our product commercialized  
+5) Change the apperance of Debian, make our product commercialized  
 """""""""""""""""
 5.1) Bootup apperance: Install plymouth with following command:
 
