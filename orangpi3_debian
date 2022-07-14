@@ -1,7 +1,7 @@
 """""""""""""""""
 1) Install Operating System (Hệ điều hành) for Orange pi 3 
 """""""""""""""""
-1.1) Download and install Debian Imager to your laptop here: https://drive.google.com/drive/folders/1ctuKgHNN9r517tiAv9GGGaR7UYQgZiXP
+1.1) Download and install Debian Bullseys Imager to your laptop here: https://drive.google.com/drive/folders/1ctuKgHNN9r517tiAv9GGGaR7UYQgZiXP
 - Download balenaEtcher to your latop here : https://www.balena.io/etcher/
 - Insert SD card (32 GB, 64 GB, 128GB ) into your laptop
 - Open balenaEtcher, click flash from flie
@@ -17,7 +17,12 @@
 2.2) Download code: Open "Terminal Emulator" and run those commands (don't type, copy paste):
 cd ~
 sudo apt update
+
+"""""""""
+//if git not installed, run following commnad:
 sudo apt install git
+"""""""""
+
 git clone https://github.com/SontranBK/pi_card_reader 
 """""""""""""""""
 3) Open "Terminal Emulator" and run those command to install dependencies:
@@ -101,24 +106,6 @@ now right-click Terminal-Emulator and open Preferences:
 - Open "Profiles", open "Command"
 - Choose both "Run command as a login shell" and "Run custom command instead of my shell"
 - Add line "sh ./pi_card_reader/Bash_Script/auto_boot.sh" to Custom command
-4.2) Install "Autohide Downloads Bar" extension for chromium here (https://chrome.google.com/webstore/detail/autohide-downloads-bar/iaefpjibipfaofmigecedfapfgplmplo)
-and set "Delay Timer" of this extension to 0.
-
-4.3) Open Chromium and open link (chrome://settings/content/notifications), in "Allowed to send notifications" part, add 5 link: 
-http://localhost:41200
-http://localhost:41201
-http://localhost:41202
-http://localhost:41203
-http://localhost:41204
-http://localhost:41205
-
-4.4) Open Chromium and open link (chrome://settings/content/automaticDownloads), add 5 link: 
-http://localhost:41200
-http://localhost:41201
-http://localhost:41202
-http://localhost:41203
-http://localhost:41204
-http://localhost:41205
 
 4.5) Go to Setting (of Ubuntu) => Appearance => Enable "Auto-hide the Dock"
 4.6) Go to Setting (of Ubuntu) => Power => Power Saving Options => Change to "Never" 
