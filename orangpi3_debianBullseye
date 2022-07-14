@@ -3,7 +3,7 @@
 """""""""""""""""
 1.1) Download and install Debian Bullseye Imager to your laptop here: https://drive.google.com/drive/folders/1ctuKgHNN9r517tiAv9GGGaR7UYQgZiXP
 - Download balenaEtcher to your latop here : https://www.balena.io/etcher/
-- Insert SD card (32 GB, 64 GB, 128GB ) into your laptop
+- Insert SD card (32 GB, 64 GB, 128 GB ) into your laptop
 - Open balenaEtcher, click flash from flie
 - Choose Debian Pi Imager which downloaded 
 - Select SD card
